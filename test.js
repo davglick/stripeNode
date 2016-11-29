@@ -81,6 +81,7 @@ app.get('/doing', function(req, res){
 
 	res.send('Doing!');
 	initApp()
+	console.log("Doing")
 });
 
 initApp()
