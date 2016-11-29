@@ -26,7 +26,7 @@ stripe.customers.create(
     {
         description: 'New test customer',
         email: 'dav.GGGGGGg@gmail.com'
-        name: 'Dav glick'
+       
     },
 
     function(error, response) {
