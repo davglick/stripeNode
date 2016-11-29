@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 app.get('/', function(req, res){
@@ -19,7 +19,7 @@ app.get('/customer', function (res, res){
 });
 
 console.log(__dirname);
-console.log("Doing")
+
 
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
