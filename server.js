@@ -184,17 +184,19 @@ initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
 
-
-          console.log("doing")
-
-          } else {
-
           	paymentRef.set({
 	token: '1234433asvcrwe2wrsfdv',
 	card: 'Visa',
 	default: false
 
           });
+
+
+          console.log("doing")
+
+          } else {
+
+          	
 
           	console.log('nul')
 
