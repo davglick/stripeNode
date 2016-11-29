@@ -2,15 +2,6 @@ var express = require('express');
 var app = express();
 var PORT = 3000;
 
-var middleware = {
-
-	requireAuthnetication: function (req, res, next) {
-		console.log('private route hit!');
-		next();
-	}
-};
-
-app.use(middleware.requireAuthnetication)
 
 app.get('/', function(req, res){
 	res.send("hello world")
@@ -28,6 +19,7 @@ app.get('/customer', function (res, res){
 });
 
 console.log(__dirname);
+console.log("Doing")
 
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
