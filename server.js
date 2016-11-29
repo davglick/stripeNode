@@ -117,7 +117,7 @@ initApp = function() {
 
 app.get('/doing', function(req, res){
 
-	res.send('Doing!');
+	res.send('what is cracking');
 	initApp()
 	
 });
