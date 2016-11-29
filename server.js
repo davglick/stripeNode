@@ -19,7 +19,7 @@ app.get('/customer', function (res, res){
 });
 
 console.log(__dirname);
-
+console.log("hello")
 
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
