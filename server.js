@@ -1,13 +1,12 @@
 var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
-var require('request');
+var request = require('request');
 var stripe = require("stripe")(
   "sk_test_ndoQxTKblloCG2EDELfg3kJT"
 );
-var userId = '2343423gjvf3q4234r2f';
+var userId = 'cus_9eJc8032au6n26';
 
-request({url: url, json: true,})
 
 app.get('/', function(req, res){
 	res.send("APPEAR")
@@ -26,8 +25,38 @@ app.get('/customers', function (res, res){
 
 
 // Using Express (http://expressjs.com/)
+stripe.customers.create(
+    {
+        description: 'New test customer',
+        email: 'fuckingOAUTHHHHHH@gmail.com'
+    },
+
+    function(error, response) {
+
+        console.log(response);
+
+    }
+);
+
+// Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
   var customerId = userId; // Load the Stripe Customer ID for your logged in user
+  stripe.customers.retrieve(customerId, function(err, customer) {
+    if (err) {
+      response.status(402).send('Error retrieving customer.');
+    } else {
+      response.json(customer);
+    }
+  })
+});
+
+
+
+/*
+
+// Using Express (http://expressjs.com/)
+app.get('/customer', function(req, res) {
+  var customerId = res.userId; // Load the Stripe Customer ID for your logged in user
   stripe.customers.retrieve(customerId, function(err, customer) {
     if (err) {
       response.status(402).send('Error retrieving customer.');
@@ -39,3 +68,5 @@ app.get('/customer', function(request, response) {
 
 });
 
+
+*/
