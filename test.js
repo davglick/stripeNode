@@ -19,14 +19,14 @@ var config = {
     messagingSenderId: "522018329506"
   };
   firebase.initializeApp(config);
+var userId = userId
 var auth = firebase.auth();
 var ref = firebase.database().ref();
-//var paymentRef = ref.child('CCard/' + userId );
-//var paymentRef = paymentRef.push();
+var paymentRef = ref.child('CCard/' + userId );
+var paymentRef = paymentRef.push();
 var user = firebase.auth().currentUser;
-//console.log(paymentRef.key);
+console.log(paymentRef.key);
 console.log(PORT);
-
 
 
 // check for auth state chagnes 
@@ -39,12 +39,12 @@ initApp = function() {
 
           } else {
 
-    /*
+    
     paymentRef.set({
 	token: '1234433asvcrwe2wrsfdv',
 	card: 'Visa',
 	default: false
-    */
+    
 	
 
          // });
