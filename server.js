@@ -21,9 +21,6 @@ app.get('/customers', function (res, res){
     
     res.send("Doing")
 
-});
-
-
 // Using Express (http://expressjs.com/)
 stripe.customers.create(
     {
@@ -38,6 +35,7 @@ stripe.customers.create(
     }
 );
 
+});
 /*
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
