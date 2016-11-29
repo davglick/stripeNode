@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
+var require('request');
 var stripe = require("stripe")(
   "sk_test_ndoQxTKblloCG2EDELfg3kJT"
 );
-var userId = '2343423gjvf3q4234r2f'
+var userId = '2343423gjvf3q4234r2f';
 
+request({url: url, json: true,})
 
 app.get('/', function(req, res){
 	res.send("APPEAR")
@@ -16,9 +18,9 @@ console.log("running on server host " + PORT )
 app.listen(PORT);
 
 
-app.get('/customer', function (res, res){
+app.get('/customers', function (res, res){
     
-    var customerId = 'user'
+    res.send("Doing")
 
 });
 
