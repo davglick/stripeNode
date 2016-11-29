@@ -35,27 +35,7 @@ initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
 
-// Using Express (http://expressjs.com/)
-app.get('/customer', function(request, response, body) {
-  var customerId = userId; // Load the Stripe Customer ID for your logged in user
-  stripe.customers.retrieve(customerId, function(err, customer) {
-    if (err) {
-      response.status(402).send('Error retrieving customer.');
-    } else {
-    
-    console.log(JSON.stringify(body, null, 4));
-
-      response.json(customer);
-
-      console.log(customer.email + "  " +  customer.id)
-
-        console.log("User is signed in")
-
-    }
-
-   });
-
-});
+          	console.log("logged in")
 
           } else {
 
@@ -81,7 +61,7 @@ app.get('/doing', function(req, res){
 
 	res.send('Doing!');
 	initApp()
-	console.log("Doing")
+
 });
 
 initApp()
