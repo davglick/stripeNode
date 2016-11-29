@@ -3,8 +3,8 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var stripe = require("stripe")(
   "sk_test_ndoQxTKblloCG2EDELfg3kJT"
- var userId = '2343423gjvf3q4234r2f'
 );
+var userId = '2343423gjvf3q4234r2f'
 
 
 app.get('/', function(req, res){
