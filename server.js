@@ -26,14 +26,7 @@ stripe.customers.create(
     {
         description: 'New test customer',
         email: 'dav.GGGGGGg@gmail.com'
-        "account_balance" = 0;
-        created = "";
-        currency = "aud";
-        "default_source" = "<null>";
-        delinquent = 0;
-        description = "New test customer";
-        discount = "<null>";
-        livemode = 0;
+        name: 'Dav glick'
     },
 
     function(error, response) {
