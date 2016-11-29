@@ -38,6 +38,7 @@ stripe.customers.create(
     }
 );
 
+/*
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response) {
   var customerId = userId; // Load the Stripe Customer ID for your logged in user
@@ -50,7 +51,7 @@ app.get('/customer', function(request, response) {
   })
 });
 
-
+*/
 
 /*
 
