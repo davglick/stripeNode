@@ -28,7 +28,7 @@ app.get('/customers', function (res, res){
 stripe.customers.create(
     {
         description: 'New test customer',
-        email: 'fuckingOAUTHHHHHH@gmail.com'
+        email: 'sup@gmail.com'
     },
 
     function(error, response) {
