@@ -47,7 +47,7 @@ initApp = function() {
     
 	
 
-         // });
+          });
 
           	console.log('nul')
 
