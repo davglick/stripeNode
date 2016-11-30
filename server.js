@@ -180,21 +180,25 @@ console.log(PORT);
 
 // check for auth state chagnes 
 
+var user = firebase.auth().currentUser;
+
+if (user) {
+  // User is signed in.
+} else {
+  // No user is signed in.
+}
+
 initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
 
-          	paymentRef.set({
-	token: '1234433asvcrwe2wrsfdv',
-	card: 'Visa',
-	default: false
-
-          });
+          
 
 
           console.log("doing")
 
           } else {
+
 
           	
 
@@ -206,9 +210,30 @@ initApp = function() {
  })
 };
 
-app.get('/', function(req, res){
+app.get('/doing', function(req, res){
 
-	res.send('Doing!');
+	res.send('suuup');
+	initApp()
+
+	var user = firebase.auth().currentUser;
+
+if (user) {
+
+
+
+
+} else {
+
+	 paymentRef.set({
+	token: '1234433asvcrwe2wrsfdv',
+	card: 'AMEX',
+	default: false
+
+          });
+  
+    
+}
+
 });
 
 initApp()
