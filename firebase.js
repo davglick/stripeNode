@@ -87,10 +87,9 @@ app.get('/customer', function(req, res) {
 var firebase = require('firebase');
 var express = require('express');
 var app = express();
-var admin = require("firebase-admin");
 var PORT = process.env.PORT || 3000;
 //var bodyParser = require("body-parser");
-var hbs = require("hbs");
+
 var stripe = require("stripe")("sk_test_ndoQxTKblloCG2EDELfg3kJT");
 
 
