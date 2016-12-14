@@ -1,3 +1,4 @@
+/*
 'use strict'; 
 
 var express = require("express");
@@ -47,3 +48,5 @@ router.get('/customer', function(request, response, body) {
 
 
 module.exports = router;
+
+*/
