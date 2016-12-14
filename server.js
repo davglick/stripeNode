@@ -84,7 +84,7 @@ app.get('/customer', function(req, res, body) {
     
 });
 
-app.get('/check', function(req, res, body) {
+app.post('/check', function(req, res, body) {
 stripe.customers.create({
   email: 'foo-customer@example.com'
 }).then(function(customer){
@@ -98,6 +98,25 @@ stripe.customers.create({
 })
 
 });
+
+
+app.post('/token', function (req, res) {
+    stripe.customers.create(
+        { 
+          card: req.body.token,
+          email: req.body.email,
+           description: req.body.description
+       },
+        function(err, customer) {
+            err; // null if no error occured
+            customer; // the created customer object
+
+            res.json(customer) // Send newly created customer back to client (Swift App)
+        }
+    )
+
+
+  });
 
 
 
