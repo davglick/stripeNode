@@ -48,10 +48,12 @@ app.post('/createUser', function(req, res) {
 //var userId =  ({customer: req.body.customer})
 
 
-var userId = "cus_9jvJNOqWlxhCOy"
+
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(req, res, body) {
 
+
+  var userId = "cus_9jvJNOqWlxhCOy"
 
   var customerId = userId; // Load the Stripe Customer ID for your logged in user
   stripe.customers.retrieve(customerId, function(err, customer) {
