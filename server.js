@@ -44,6 +44,7 @@ stripe.customers.create(
 
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(request, response, body) {
+  var userId = "cus_9jvJNOqWlxhCOy"
   var customerId = userId; // Load the Stripe Customer ID for your logged in user
   stripe.customers.retrieve(customerId, function(err, customer) {
     if (err) {
