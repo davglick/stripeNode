@@ -25,8 +25,13 @@ app.use(bodyParser.json());
 
             res.json(customer) // Send newly created customer back to client (Swift App)
         }
-    );
-});
+    )
+
+
+  });
+
+
+
 
 // Post request 
 
@@ -52,8 +57,13 @@ app.post('/createUser', function(req, res) {
 // Using Express (http://expressjs.com/)
 app.get('/customer', function(req, res, body) {
 
-var body = req.body;
-var userId =  ({customer: req.body.customer})
+//var body = req.body;
+//var userId =  ({customers: req.body.customer})
+// Using Express (http://expressjs.com/)
+//app.get('/customer', function(req, res, body) {
+
+
+  var userId = "cus_9jvJNOqWlxhCOy"
 
   var customerId = userId; // Load the Stripe Customer ID for your logged in user
   stripe.customers.retrieve(customerId, function(err, customer) {
@@ -68,14 +78,32 @@ var userId =  ({customer: req.body.customer})
       console.log(customer.email + "  " +  customer.id)
  
 
-    }
+    } 
 
-   });
+});
+    
+});
+
+app.get('/check', function(req, res, body) {
+stripe.customers.create({
+  email: 'foo-customer@example.com'
+}).then(function(customer){
+  return stripe.customers.createSource(customer.id, {
+    object: 'card',
+    exp_month: 10,
+    exp_year: 2018,
+    number: '4242 4242 4242 4242',
+    cvc: 100
+  });
+})
 
 });
 
 
+
 app.listen(PORT);
+
+
 
 
 
