@@ -123,16 +123,7 @@ app.post('/token', function (req, res) {
 app.post('/customer/sources', function(request, response) {
   var customerId = "cus_9jvJNOqWlxhCOy"; // Load the Stripe Customer ID for your logged in user
   stripe.customers.createSource(customerId, {
-    
-    "brand": "Visa",
-    "country": "US",
-    "cvc_check": null,
-    "dynamic_last4": null,
-    "exp_month": 8,
-    "exp_year": 2017,
-    "funding": "credit",
-    "last4": "4242"
-    
+    source: request.body.source
   }, function(err, source) {
     if (err) {
       response.status(402).send('Error attaching source.');
